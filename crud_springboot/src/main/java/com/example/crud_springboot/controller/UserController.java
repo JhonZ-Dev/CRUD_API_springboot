@@ -35,5 +35,16 @@ public class UserController {
         return this.userService.updateById(request,id);
 
     }
+    @DeleteMapping(path = "/{id}")
+    public String deleteById(@PathVariable("id") Integer id){
+        boolean ok=this.userService.deleteUser(id);
+        if(ok){
+            return "User con id" + id +"Eliminado";
+
+        }else {
+            return "User con id" + id +"No eliminado";
+        }
+    }
+
 
 }
