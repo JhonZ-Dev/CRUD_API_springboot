@@ -30,5 +30,10 @@ public class UserController {
     public Optional<UserModel> getUserById(@PathVariable Integer id){
         return this.userService.getById(id);
     }
+    @PutMapping(path = "/{id}")
+    public UserModel updateUserById(@RequestBody UserModel request,@PathVariable("id") Integer id){
+        return this.userService.updateById(request,id);
+
+    }
 
 }
