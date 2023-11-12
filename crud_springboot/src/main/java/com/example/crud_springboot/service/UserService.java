@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -20,5 +21,9 @@ public class UserService {
     /*Guardar un usuario*/
     public UserModel saveUser(UserModel userModel){
         return usuarioRepository.save(userModel);
+    }
+    public Optional<UserModel> getById(Integer id){
+
+        return usuarioRepository.findById(id);
     }
 }
