@@ -35,4 +35,14 @@ public class UserService {
 
         return userModel;
     }
+    /*Metodo para eliminar*/
+    public Boolean deleteUser(Integer id){
+        try {
+            usuarioRepository.deleteById(id);
+            return true;
+
+        }catch (Exception e){
+            return false;
+        }
+    }
 }
